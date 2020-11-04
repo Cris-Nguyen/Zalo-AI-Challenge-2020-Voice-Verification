@@ -1,0 +1,8 @@
+Train-Test-Data/dataset/
+Train-Test-Data/public-test/
+Train-Test-Data/data.csv
+Train-Test-Data/sample_submission.csv
+Train-Test-Data/public-test.csv
+Train-Test-Data/train.csv
+Train-Test-Data/dev.csv
+src/__pycache__/

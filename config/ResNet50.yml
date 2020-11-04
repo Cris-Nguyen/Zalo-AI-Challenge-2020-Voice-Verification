@@ -1,0 +1,30 @@
+data:
+    train: Train-Test-Data/train.csv
+    dev: Train-Test-Data/dev.csv
+
+audio_parameters: 
+    sampling_rate: 48000
+    desired_sample: 48000
+
+melspectrogram_parameters: 
+    n_mels: 128
+    fmin: 20
+    fmax: 24000
+
+img_size: 224
+
+model: 
+    name: resnet50
+    params:
+        pretrained: True
+        n_classes: 400
+
+train_parameters:
+    batch_size: 32
+    shuffle: True
+    epochs: 1000
+    optimizer:
+        lr: 0.001
+        amsgrad: False
+
+saved_model: saved_model
