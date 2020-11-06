@@ -1,6 +1,6 @@
 data:
-    train: Train-Test-Data/train.csv
-    dev: Train-Test-Data/dev.csv
+    train: Train-Test-Data/train_test_colab_combined.csv
+    dev: Train-Test-Data/dev_colab.csv
 
 audio_parameters: 
     sampling_rate: 48000
@@ -14,10 +14,11 @@ melspectrogram_parameters:
 img_size: 224
 
 model: 
-    name: resnet50
+    name: angpen-mobilenet_v2-arcface
     params:
         pretrained: True
         n_classes: 400
+        embed: False
 
 train_parameters:
     batch_size: 32

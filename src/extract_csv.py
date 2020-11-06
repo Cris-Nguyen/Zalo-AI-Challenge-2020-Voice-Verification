@@ -18,6 +18,7 @@ def get_duration(wav_path):
     with contextlib.closing(wave.open(wav_path,'r')) as f:
         frames = f.getnframes()
         rate = f.getframerate()
+        print(rate)
         duration = frames / float(rate)
     return duration
 
@@ -40,7 +41,6 @@ def extract_data(data_dir, train_csv, dev_csv, class_txt):
         class_path = os.path.join(data_dir, idx)
         files = os.listdir(class_path)
         path = [os.path.abspath(os.path.join(class_path, fn)) for fn in files]
-        print(path, len(path))
         X_train, X_dev, y_train, y_dev = split(path, [class_idx] * (len(files)), test_size=0.2)
         audio_train += X_train
         label_train += y_train

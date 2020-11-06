@@ -89,6 +89,6 @@ def mono_to_color(X: np.ndarray,
 
 
 if __name__ == '__main__':
-    speech_dataset = SpeechDataset('../Train-Test-Data/train.csv', audio_parameters, melspectrogram_parameters, img_size=224)
+    speech_dataset = SpeechDataset('../Train-Test-Data/train_colab.csv', audio_parameters, melspectrogram_parameters, img_size=224)
     a = speech_dataset.__getitem__(4)
     print(a[0].shape)
