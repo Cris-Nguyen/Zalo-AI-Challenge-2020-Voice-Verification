@@ -161,13 +161,12 @@ def train_am(config):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            if (i + 1) % 100 == 0:
-                print(f'Epoch [{epoch}/{config["train_parameters"]["epochs"]}], Step [{i + 1}/{total_step}], Loss: {loss.item()}')
-            if (epoch + 1) % 10 == 0:
-                torch.save(model.state_dict(), f'{config["saved_model"]}/{config["model"]["name"]}_{round(loss.item(), 5)}.pkl')
-            if (epoch + 1) % 20 == 0:
-                for param_group in optimizer.param_groups:
-                    param_group['lr'] = param_group['lr'] / 4
+        print(f'Epoch [{epoch + 1} / {config["train_parameters"]["epochs"]}], Loss: {loss.item()}')
+        if (epoch + 1) % 10 == 0:
+            torch.save(model.state_dict(), f'{config["saved_model"]}/{config["model"]["name"]}_{epoch + 1}_{round(loss.item(), 6)}.pkl')
+        if (epoch + 1) % 10 == 0:
+            for param_group in optimizer.param_groups:
+                param_group['lr'] = param_group['lr'] / 4
 
 
 def load_model(model_path, config):

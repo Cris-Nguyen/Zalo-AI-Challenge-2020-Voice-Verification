@@ -14,7 +14,7 @@ melspectrogram_parameters:
 img_size: 224
 
 model: 
-    name: angpen-mobilenet_v2-arcface
+    name: angpen-mobilenet_v2-cosface
     params:
         pretrained: True
         n_classes: 400
@@ -25,7 +25,7 @@ train_parameters:
     shuffle: True
     epochs: 1000
     optimizer:
-        lr: 0.001
+        lr: 0.01
         amsgrad: False
 
-saved_model: saved_model
+saved_model: saved_model/angpen_mobilenet_cosface
